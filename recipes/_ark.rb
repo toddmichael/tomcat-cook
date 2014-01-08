@@ -45,7 +45,7 @@ template "#{node[:tomcat][:conf_dir]}/server.xml" do
   mode 00664
   variables(
     :tomcat_version => node[:tomcat][:version].to_i,
-    :tomcat_port => node[:tomcat][:port],
+    :tomcat_http_port => node[:tomcat][:http_port],
     :tomcat_ajp_port => node[:tomcat][:ajp_port],
 
   )

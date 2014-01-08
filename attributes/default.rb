@@ -15,7 +15,7 @@ default[:tomcat][:pid_dir] = '/var/run/tomcat'
 default[:tomcat][:lock_dir] = '/var/lock/subsys'
 
 # Ports
-default[:tomcat][:port] = 8080
+default[:tomcat][:http_port] = 8080
 default[:tomcat][:ajp_port] = 8009
 
 # Java/Catalina options 

@@ -94,8 +94,8 @@ Do not edit locally
          IP address of the remote client.
     -->
 
-    <!-- Define a non-SSL HTTP/1.1 Connector on port <%= @tomcat_port %> -->
-    <Connector port="<%= @tomcat_port %>" maxHttpHeaderSize="8192"
+    <!-- Define a non-SSL HTTP/1.1 Connector on port <%= @tomcat_http_port %> -->
+    <Connector port="<%= @tomcat_http_port %>" maxHttpHeaderSize="8192"
                maxThreads="150" minSpareThreads="25" maxSpareThreads="75"
                enableLookups="false" redirectPort="8443" acceptCount="100"
                connectionTimeout="20000" disableUploadTimeout="true" />
