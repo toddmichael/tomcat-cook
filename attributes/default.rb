@@ -14,11 +14,15 @@ default[:tomcat][:lib_dir] = '/usr/local/tomcat/lib'
 default[:tomcat][:pid_dir] = '/var/run/tomcat'
 default[:tomcat][:lock_dir] = '/var/lock/subsys'
 
-# Ports
-default[:tomcat][:http_port] = 8080
+# Connectors
 default[:tomcat][:ajp_port] = 8009
+default[:tomcat][:ajp_connection_timeout] = 20000
+default[:tomcat][:ajp_max_threads] = 200
+default[:tomcat][:http_port] = 8080
+default[:tomcat][:http_connection_timeout] = 20000
+default[:tomcat][:http_max_threads] = 200
+default[:tomcat][:http_uri_encoding] = 'ISO-8859-1'
 
-# Java/Catalina options 
 default[:tomcat][:catalina_opts] = ''
 default[:tomcat][:java_opts] = '-Xmx128M -Djava.awt.headless=true'
 
