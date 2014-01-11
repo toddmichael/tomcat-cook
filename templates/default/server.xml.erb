@@ -73,15 +73,16 @@ Do not edit locally
          Java HTTP Connector: /docs/config/http.html (blocking & non-blocking)
          Java AJP  Connector: /docs/config/ajp.html
          APR (HTTP/AJP) Connector: /docs/apr.html
-         Define a non-SSL HTTP/1.1 Connector on port <%= @tomcat_http_port %> 
+         Define a non-SSL HTTP/1.1 Connector on port <%= @http_port %>
     -->
-    <Connector port="<%= @tomcat_http_port %>" protocol="HTTP/1.1"
-               connectionTimeout="20000"
-               redirectPort="8443" />
+    <Connector port="<%= @http_port %>" protocol="HTTP/1.1"
+      connectionTimeout="<%= @http_connection_timeout %>"
+      redirectPort="<%= @http_redirect_port %>" URIEncoding="<%= @http_uri_encoding %>"
+      maxThreads="<%= @http_max_threads %>" />
     <!-- A "Connector" using the shared thread pool-->
     <!--
     <Connector executor="tomcatThreadPool"
-               port="<%= @tomcat_http_port %>" protocol="HTTP/1.1"
+               port="8080" protocol="HTTP/1.1"
                connectionTimeout="20000"
                redirectPort="8443" />
     -->
@@ -95,8 +96,10 @@ Do not edit locally
                clientAuth="false" sslProtocol="TLS" />
     -->
 
-    <!-- Define an AJP 1.3 Connector on port <%= @tomcat_ajp_port %> -->
-    <Connector port="<%= @tomcat_ajp_port %>" protocol="AJP/1.3" redirectPort="8443" />
+    <!-- Define an AJP 1.3 Connector on port <%= @ajp_port %> -->
+    <Connector port="<%= @ajp_port %>" protocol="AJP/1.3"
+      connectionTimeout="<%= @ajp_connection_timeout %>"
+      redirectPort="<%= @ajp_redirect_port %>" maxThreads="<%= @ajp_max_threads %>" />
 
 
     <!-- An Engine represents the entry point (within Catalina) that processes

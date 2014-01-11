@@ -16,9 +16,11 @@ default[:tomcat][:lock_dir] = '/var/lock/subsys'
 
 # Connectors
 default[:tomcat][:ajp_port] = 8009
+default[:tomcat][:ajp_redirect_port] = 8443
 default[:tomcat][:ajp_connection_timeout] = 20000
 default[:tomcat][:ajp_max_threads] = 200
 default[:tomcat][:http_port] = 8080
+default[:tomcat][:http_redirect_port] = 8443
 default[:tomcat][:http_connection_timeout] = 20000
 default[:tomcat][:http_max_threads] = 200
 default[:tomcat][:http_uri_encoding] = 'ISO-8859-1'

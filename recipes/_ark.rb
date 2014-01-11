@@ -44,10 +44,16 @@ template "#{node[:tomcat][:conf_dir]}/server.xml" do
   source server_template
   mode 00664
   variables(
-    :tomcat_version => node[:tomcat][:version].to_i,
-    :tomcat_http_port => node[:tomcat][:http_port],
-    :tomcat_ajp_port => node[:tomcat][:ajp_port],
-
+    :ajp_port => node[:tomcat][:ajp_port],
+    :ajp_redirect_port => node[:tomcat][:ajp_redirect_port],
+    :ajp_connection_timeout => node[:tomcat][:ajp_connection_timeout],
+    :ajp_max_threads => node[:tomcat][:ajp_max_threads],
+    :http_port => node[:tomcat][:http_port],
+    :http_redirect_port => node[:tomcat][:http_redirect_port],
+    :http_connection_timeout => node[:tomcat][:http_connection_timeout],
+    :http_max_threads => node[:tomcat][:http_max_threads],
+    :http_uri_encoding => node[:tomcat][:http_uri_encoding],
+    :tomcat_version => node[:tomcat][:version].to_i
   )
   notifies :restart, "service[#{tomcat_service}]"
 end
