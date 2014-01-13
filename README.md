@@ -1,8 +1,8 @@
-# Tomcat 
+# Tomcat
 
 ## Description
 
-A super simple cookbook that:
+A super simple **and incomplete** cookbook that:
 
  - Installs Tomcat from binary tarball
  - Configures and init script
