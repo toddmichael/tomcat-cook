@@ -16,3 +16,4 @@ vendor/*
 berks.json
 .vagabond
 Berksfile.lock
+hidden/
