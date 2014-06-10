@@ -3,6 +3,7 @@
 #
 
 tomcat_service = "tomcat#{node[:tomcat][:version]}"
+version = node[:tomcat][:version]
 
 include_recipe 'ark'
 
@@ -23,7 +24,7 @@ end
 
 # Download and install
 ark 'tomcat' do
-  url node[:tomcat][:url]
+  url node[:tomcat][version][:url]
   checksum node[:tomcat][:checksum]
   version node[:tomcat][:version]
   prefix_root node[:tomcat][:prefix_dir]
