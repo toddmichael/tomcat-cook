@@ -8,5 +8,5 @@ version '0.1.2'
 
 supports 'centos'
 
-depends 'ark'
-depends 'java'
+depends 'ark', '>= 0.9.0'
+depends 'java', '>= 1.28.0'
