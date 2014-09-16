@@ -30,7 +30,9 @@ Do not edit locally
   <!--APR library loader. Documentation at /docs/apr.html -->
   <Listener className="org.apache.catalina.core.AprLifecycleListener" SSLEngine="on" />
   <!--Initialize Jasper prior to webapps are loaded. Documentation at /docs/jasper-howto.html -->
+  <% if @tomcat_version < 8 -%>
   <Listener className="org.apache.catalina.core.JasperListener" />
+  <% end -%>
   <!-- Prevent memory leaks due to use of particular java/javax APIs-->
   <Listener className="org.apache.catalina.core.JreMemoryLeakPreventionListener" />
   <% if @tomcat_version < 7 -%>

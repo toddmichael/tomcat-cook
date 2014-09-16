@@ -7,8 +7,10 @@ provisioner:
   require_chef_omnibus: latest
 
 platforms:
-- name: centos-6.4
-- name: ubuntu-12.04
+- name: centos-6
+  driver:
+    provision_command:
+      - yum install -y tar
 
 suites:
 - name: default
@@ -16,13 +18,22 @@ suites:
     - recipe[tomcat]
   attributes: {}
 
+- name: tomcat8
+  run_list:
+    - recipe[tomcat]
+  attributes: {
+    tomcat: { version: '8' },
+    java: {
+      jdk_version: '8',
+      install_flavor: 'oracle',
+      accept_license_agreement: true,
+      oracle: { accept_oracle_download_terms: true }
+    }
+  }
+
 - name: tomcat55
   run_list:
     - recipe[tomcat]
   attributes: {
     tomcat: { version: '55' }
   }
-
-clusters:
-  default:
-    - default
