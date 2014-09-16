@@ -1,11 +1,11 @@
-# Tomcat
+# Tomcat Cookbook
 
 ## Description
 
 A super simple **and incomplete** cookbook that:
 
  - Installs Tomcat from binary tarball
- - Configures and init script
+ - Configures an init script
  - Configures setenv.sh
  - Enables and starts Tomcat service
 
@@ -65,6 +65,7 @@ Performs the bulk of the Tomcat installation.
 
 ### \_java
 
+ - Checks for Tomcat/Java version compatibility issues.
  - Installs default Java using Opscode [Java](https://github.com/socrata-cookbooks/java) cookbook.
 
 ### base
