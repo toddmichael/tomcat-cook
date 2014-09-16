@@ -29,6 +29,8 @@ default[:tomcat][:catalina_opts] = ''
 default[:tomcat][:java_opts] = '-Xmx128M -Djava.awt.headless=true'
 
 # Tomcat binaries and sha256 checksums
+default[:tomcat][:'8'][:url] = 'http://apache.spinellicreations.com/tomcat/tomcat-8/v8.0.12/bin/apache-tomcat-8.0.12.tar.gz'
+default[:tomcat][:'8'][:checksum] = '07a58d93432a3047f3a892cb8b5d6749c0bfc177dc2a5e70e2331fbb7bbdc0af'
 default[:tomcat][:'7'][:url] = 'http://archive.apache.org/dist/tomcat/tomcat-7/v7.0.47/bin/apache-tomcat-7.0.47.tar.gz'
 default[:tomcat][:'7'][:checksum] = '46dc31b08c120ffc2e38dccc119b9df02662a9fb297fa3fc6d90902c2f86057a'
 default[:tomcat][:'6'][:url] = 'http://archive.apache.org/dist/tomcat/tomcat-6/v6.0.37/bin/apache-tomcat-6.0.37.tar.gz'
